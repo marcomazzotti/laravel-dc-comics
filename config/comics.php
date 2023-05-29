@@ -110,4 +110,3 @@ return [
         "type" => "graphic novel",
     ],
 ];
-
