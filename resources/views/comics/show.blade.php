@@ -14,7 +14,7 @@
                         <p>Serie: {{ $comics->series }}</p>
                         <p>In vendita dal: {{ $comics->sale_date }}</p>
                         <p>Tipo: {{ $comics->type }}</p>
-                        <a href="{{ route('comics.index') }}" class="btn btn-success">Torna alla home</a>
+                        <a href="{{ route('comics.index') }}" class="btn btn-primary">Torna alla home</a>
                     </div>
                 </div>
             </div>

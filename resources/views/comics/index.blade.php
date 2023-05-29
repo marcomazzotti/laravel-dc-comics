@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-4">
-        <h2>Tutti i fumetti</h2>
+        <h2 class="text-center">Tutti i fumetti</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -24,10 +24,14 @@
                         <td>{{ $comic->price }}</td>
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->type }}</td>
-                        <td><a href="{{ route('comics.show', $comic->id) }}" class="btn btn-success">Dettagli</a></td>
+                        <td><a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Dettagli</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        <h4 class="text-center">Non trovi quello che stai cercando?</h4>
+        <h4 class="text-center">Aggiungi un fumetto al catalogo!</h4>
+        <div class="text-center mt-3"><a class="btn btn-primary" href="{{ route('comics.create') }}">Aggiungi</a></div>
+
     </div>
 @endsection
