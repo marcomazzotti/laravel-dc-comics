@@ -15,6 +15,8 @@
                         <p>In vendita dal: {{ $comics->sale_date }}</p>
                         <p>Tipo: {{ $comics->type }}</p>
                         <a href="{{ route('comics.index') }}" class="btn btn-primary">Torna alla home</a>
+                        <td><a href="{{ route('comics.edit', $comics->id) }}" class="btn btn-primary">Modifica</a></td>
+                        <td><a href="{{ route('comics.destroy', $comics->id) }}" class="btn btn-primary">Elimina</a></td>
                     </div>
                 </div>
             </div>
