@@ -29,7 +29,14 @@
                         <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <td><button class="btn btn-primary">Elimina</button></td>
+                            <td><button class="btn btn-primary" onclick="showAlert()">Elimina</button></td>
+                            <script>
+                                function showAlert() {
+                                    if (confirm("Sei sicuro di voler eliminare questo fumetto?")) {
+                                        document.getElementById("delete-form").submit();
+                                    }
+                                }
+                            </script>
                         </form>
                     </tr>
                 @endforeach
