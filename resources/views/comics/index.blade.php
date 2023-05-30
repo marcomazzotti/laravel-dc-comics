@@ -20,7 +20,7 @@
                     <tr>
                         <th scope="row">{{ $comic->id }}</th>
                         <td>{{ $comic->title }}</td>
-                        <td>{{ $comic->thumb }}</td>
+                        <td><img class="w-50" src="{{ $comic->thumb }}" alt=""></td>
                         <td>{{ $comic->price }}</td>
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->type }}</td>
