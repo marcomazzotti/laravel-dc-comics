@@ -19,12 +19,13 @@
                 @foreach ($comics as $comic)
                     <tr>
                         <th scope="row">{{ $comic->id }}</th>
-                        <td>{{ $comic->title }}</td>
                         <td><img class="w-50" src="{{ $comic->thumb }}" alt=""></td>
+                        <td>{{ $comic->title }}</td>
                         <td>{{ $comic->price }}</td>
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->type }}</td>
                         <td><a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Dettagli</a></td>
+                        <td><a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Modifica</a></td>
                     </tr>
                 @endforeach
             </tbody>
