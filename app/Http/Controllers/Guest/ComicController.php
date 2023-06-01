@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Guest;
 
 use App\Models\Comic;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -35,9 +37,9 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $comics = new Comic();
         $comics->fill($data);
         $comics->save();
@@ -76,9 +78,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateComicRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $comics = Comic::findOrFail($id);
         $comics->update($data);
         return redirect()->route("comics.show", $comics->id);
